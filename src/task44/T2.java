@@ -9,10 +9,10 @@ import java.lang.Thread;
  *
  * @author a.yusupova
  */
-public class T1 extends Thread{
+public class T2 extends Thread{
     
     protected String name;
-    T1(String name)
+    T2(String name)
     {
         this.name = name;
     }
@@ -29,11 +29,12 @@ public class T1 extends Thread{
     }
     
     public void print10(int count){
-        System.out.print(name + ": {");
+        String result = name + ": {";
         for(int i = 1; i <= count; ++i){
-            System.out.print(threadNum + " ");
-            threadNum++;
+            result += threadNum++;
+            result += " ";
         }
-        System.out.print("} ");
+        result += "} ";
+        System.out.print(result);
     }
 }
